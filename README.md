@@ -96,8 +96,8 @@ Pending → Approved → In Progress → Solved
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/gramsewa.git
-cd gramsewa
+git clone https://github.com/rajp904/GramSewa.git
+cd GramSewa
 ```
 
 2. **Backend Setup**
@@ -227,9 +227,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+**Raj Patel**
+- GitHub: [@rajp904](https://github.com/rajp904)
+- Project: [GramSewa](https://github.com/rajp904/GramSewa)
 
 ## 🙏 Acknowledgments
 
