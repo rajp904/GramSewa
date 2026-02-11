@@ -1,0 +1,40 @@
+.admin-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.detail-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.detail-card h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.detail-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.info-section {
+  margin: 20px 0;
+}
+
+.info-section p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .admin-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
