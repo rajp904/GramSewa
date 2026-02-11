@@ -69,6 +69,28 @@ const AdminDashboard = () => {
     });
   };
 
+  const handleDelete = async (complaintId) => {
+    if (!window.confirm('Are you sure you want to delete this complaint? This action cannot be undone.')) {
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem('adminToken');
+      const response = await api.delete(`/admin/complaints/${complaintId}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      if (response.data.success) {
+        toast.success('Complaint deleted successfully!');
+        fetchComplaints();
+        fetchStats();
+      }
+    } catch (error) {
+      console.error('Delete error:', error);
+      toast.error(error.response?.data?.message || 'Failed to delete complaint');
+    }
+  };
+
   const handleLogout = () => {
     logout();
     navigate('/admin/login');
@@ -173,6 +195,14 @@ const AdminDashboard = () => {
                     <Link to={`/admin/complaint/${complaint._id}`} className="btn btn-secondary btn-sm">
                       View
                     </Link>
+                    {' '}
+                    <button 
+                      onClick={() => handleDelete(complaint._id)} 
+                      className="btn btn-danger btn-sm"
+                      style={{ marginLeft: '5px' }}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}

@@ -3,6 +3,7 @@ const {
   getAllComplaints,
   updateComplaintStatus,
   assignComplaint,
+  deleteComplaint,
   getComplaintStats
 } = require('../controllers/adminComplaintController');
 const { protectAdmin } = require('../middleware/auth');
@@ -13,5 +14,6 @@ router.get('/', protectAdmin, getAllComplaints);
 router.get('/stats', protectAdmin, getComplaintStats);
 router.put('/:id/status', protectAdmin, updateComplaintStatus);
 router.put('/:id/assign', protectAdmin, assignComplaint);
+router.delete('/:id', protectAdmin, deleteComplaint);
 
 module.exports = router;

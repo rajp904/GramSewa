@@ -72,7 +72,10 @@ exports.getMyComplaints = async (req, res) => {
 // @access  Public
 exports.getPublicComplaints = async (req, res) => {
   try {
-    const complaints = await Complaint.find()
+    // Only show complaints that are Approved, In Progress, or Solved
+    const complaints = await Complaint.find({
+      status: { $in: ['Approved', 'In Progress', 'Solved'] }
+    })
       .populate('createdBy', 'name email')
       .sort({ createdAt: -1 })
       .limit(50);
