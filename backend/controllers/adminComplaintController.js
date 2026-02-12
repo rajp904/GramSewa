@@ -1,8 +1,6 @@
 const Complaint = require('../models/Complaint');
 
-// @desc    Get all complaints with filters (Admin)
-// @route   GET /api/admin/complaints
-// @access  Private/Admin
+
 exports.getAllComplaints = async (req, res) => {
   try {
     const { category, status, search, page = 1, limit = 20 } = req.query;
