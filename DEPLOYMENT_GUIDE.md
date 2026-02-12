@@ -1,1 +1,0 @@
-gramsewa.netlify.app
