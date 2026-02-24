@@ -10,7 +10,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
-// Debug: Log config (remove in production)
+// Debug 
 console.log('Firebase Config:', {
   apiKey: firebaseConfig.apiKey ? `${firebaseConfig.apiKey.substring(0, 10)}...` : 'MISSING',
   authDomain: firebaseConfig.authDomain || 'MISSING',
